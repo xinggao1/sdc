@@ -1,0 +1,4 @@
+$ cat .gitignore
+# exclude everything except directory foo/bar
+/test_videos_output/*
+.class
