@@ -25,17 +25,17 @@ My pipeline consisted of 5 steps.
 
     1. use gaussian blur to blur lightly
     2. take only the bottom triangle region_of_interest for further processing
-        ![alt text][image1]
+![alt text][image1]
     
     3. calculate the edges and remove the borders from previous step
-        ![alt text][image2]
+![alt text][image2]
     
     4. find line sections through cv2.HoughLinesP
-        ![alt text][image3]
+![alt text][image3]
     
     5. sort all the line sections into different bins based on their angle and offset
     6. find the 2 bins with most of line secitons count by length, and output the final 2 lines through the weighted average. 
-        ![alt text][image4]
+![alt text][image4]
 
 
 ### 2. Identify potential shortcomings with your current pipeline
