@@ -134,9 +134,24 @@ If an iterative approach was chosen:
 Here are five German traffic signs that I found on the web:
 
 ![alt text][image4]
-![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
 
+This image is not square, which may make it difficult to classify after resize to input size.
+
+![alt text][image5]
+
+This sign has extra words below. 
+ 
+![alt text][image6] 
+
+This one has none square shape and background noise
+
+![alt text][image7] 
+
+This one has has none square shape, big size and noise on the sign
+
+![alt text][image8]
+
+This one has background noise
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -152,7 +167,8 @@ Here are the results of the prediction:
 
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. 
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%.
+The accuracy on the captured images is 80% while it was 94% on the testing set thus It seems the model is overfitting. The wrong classified image has the sign one the side of image and corner croped after preprocessing. So more training data on this kind of offset sign should help the overfitting.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
