@@ -1,0 +1,12 @@
+
+# build files
+build/
+
+
+ide_profiles/xcode/Debug/
+ide_profiles/xcode/ExtendedKF.build/
+
+cmake-build-debug/
+.idea/
+src/Eigen/.idea/
+src/Eigen/cmake-build-debug/
