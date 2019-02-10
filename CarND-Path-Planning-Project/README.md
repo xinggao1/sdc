@@ -60,5 +60,5 @@
     
 
 ## Final result (drives around track video)
-Here's a [link to my video result](.pic/pathplan.mp4)
+Here's a [link to my video result](pic/pathplan.mp4)
   
