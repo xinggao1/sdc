@@ -41,7 +41,7 @@ comments to explain how the code works.
 
 ### Model Architecture and Training Strategy
 
-#### 1. An appropriate model architecture has been employed
+#### 1. Model architecture
 
 My model follows the nVidia network, consists of 5 convolution layers with 
  5x5 and 3x3 filter sizes and depths between 24 and 64 (model.py lines 130-140) 
@@ -49,7 +49,7 @@ My model follows the nVidia network, consists of 5 convolution layers with
 The model includes RELU activation to introduce nonlinearity (code line 130), 
 and the data is normalized in the model using a Keras lambda layer (code line 130). 
 
-#### 2. Attempts to reduce overfitting in the model
+#### 2. Attempts to reduce overfitting
 
 The model use a train data set of 30864, as large as resource permits to prevent overfitting.
 

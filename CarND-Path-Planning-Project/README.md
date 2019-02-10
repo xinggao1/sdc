@@ -4,16 +4,17 @@
 ![MPC driving](pic/pic1.png)
 
 ## Goals
-In this project your goal is to safely navigate around a virtual highway with 
-other traffic that is driving +-10 MPH of the 50 MPH speed limit. It will 
-be provided that the car's localization and sensor fusion data, there is also a 
-sparse map list of waypoints around the highway. The car should try to go as 
-close as possible to the 50 MPH speed limit, which means passing slower traffic 
-when possible, note that other cars will try to change lanes too. The car should
- avoid hitting other cars at all cost as well as driving inside of the marked road 
- lanes at all times, unless going from one lane to another. Also the car s
- hould not experience total acceleration over 10 m/s^2 and jerk that is greater than 10 m/s^3.
+* Safely navigate around a virtual highway with other traffic 
+* Pass slower traffic when possible
+* Avoid hitting other cars
+* Driving inside of the marked road lanes  unless changing lanes
+* Total acceleration < 10 m/s^2 and jerk < 10 m/s^3.
 
+
+## Input
+* Car's localization 
+* Sensor fusion data of other cars
+* Sparse map list of waypoints around the highway
 
 
 ## Code

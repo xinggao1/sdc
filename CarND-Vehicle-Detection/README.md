@@ -1,4 +1,4 @@
-# Vehicle Detection Project
+# Vehicle Detection
 
 ## Goals / steps
 
@@ -111,8 +111,6 @@ the result of `scipy.ndimage.measurements.label()` and the bounding boxes then o
 
 
 ---
-
-###Discussion
 
 #### Problems / issues
 
