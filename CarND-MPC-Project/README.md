@@ -1,4 +1,4 @@
-# CarND-Controls-MPC
+# Model Predictive Control
 
 ---
 
@@ -71,4 +71,3 @@ Model output throttle and steering angle to vehicle.
     * This resulting state is the initial state to feed into MPC procedure.
     * The MPC output will be right for vehicle after latency.
     
-  

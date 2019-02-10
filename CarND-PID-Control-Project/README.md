@@ -2,6 +2,8 @@
 
 ---
 
+![pid](pic/pid.png)
+
 ## Goal
 Implement a PID controller in C++ to maneuver the vehicle around the track.
 The simulator provides the cross track error (CTE) and the velocity (mph) in order to compute the appropriate steering angle.

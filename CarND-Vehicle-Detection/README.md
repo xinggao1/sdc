@@ -1,12 +1,12 @@
-**Vehicle Detection Project**
+# Vehicle Detection Project
 
-The goals / steps of this project are the following:
+## Goals / steps
 
 * Perform a Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images and train a classifier Linear SVM classifier
-* Optionally, you can also apply a color transform and append binned color features, as well as histograms of color, to your HOG feature vector. 
-* Note: for those first two steps don't forget to normalize your features and randomize a selection for training and testing.
-* Implement a sliding-window technique and use your trained classifier to search for vehicles in images.
-* Run your pipeline on a video stream (start with the test_video.mp4 and later implement on full project_video.mp4) and create a heat map of recurring detections frame by frame to reject outliers and follow detected vehicles.
+* Apply a color transform and append binned color features, as well as histograms of color, to your HOG feature vector.
+* For those first two steps, normalize features and randomize a selection for training and testing.
+* Implement a sliding-window technique and use trained classifier to search for vehicles in images.
+* Run pipeline on a video stream
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
@@ -20,16 +20,9 @@ The goals / steps of this project are the following:
 
 [video1]: ./project_video.mp4
 
-## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
-###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
+### Histogram of Oriented Gradients (HOG)
 
----
-###Writeup / README
-
-
-###Histogram of Oriented Gradients (HOG)
-
-####1. Explain how (and identify where in your code) you extracted HOG features from the training images.
+#### 1. Extract HOG features from the training images.
 
 The code for this step is contained in the 5th code cell of the IPython notebook 
 called `vehicleDetection.ipynb`  
@@ -50,9 +43,10 @@ Here is an example using the `YCrCb` color space and HOG parameters of `orientat
 
 YCrCb 3-channel HOG features plus spatially binned color and histograms of color are used. And all the features 
  are normalized.
+
 ![alt text][image8]
 
-####2. Explain how you settled on your final choice of HOG parameters.
+#### 2. Settle on final choice of HOG parameters.
 
 I tried various combinations of parameters and the following performs best in the classifier training
 ```python
@@ -63,7 +57,7 @@ colorspace = 'YCrCb'
 hog_channel = "ALL" 
 ```
 
-####3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
+#### 3. Train a classifier
 
 I trained a linear SVM using linear supporting vector machine `LinearSVC()`.
 The feature vector from HOG has length 5292. The final test Accuracy of SVC is 98%.
@@ -71,9 +65,9 @@ The feature vector from HOG has length 5292. The final test Accuracy of SVC is 9
 The code for this step is contained in the 16th code cell of the IPython notebook 
 called `vehicleDetection.ipynb`  
 
-###Sliding Window Search
+### Sliding Window Search
 
-####1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
+#### 1. Implemented a sliding window search
 
 I used two sizes of window 96x96 and 128x128 with overlap 0.7 and 0.8. 
 And 96x96 windows are positioned further where cars appear smaller, while 128x128 windows are positioned closer.
@@ -81,7 +75,7 @@ More windows size could be used, if more computing power is available.
 
 ![alt text][image3]
 
-####2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
+#### 2. Examples of test images
 
 Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially
  binned color and histograms of color in the feature vector, which provided a nice result.  
@@ -92,11 +86,11 @@ Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spat
 
 ### Video Implementation
 
-####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
+#### 1. Final video output.
 Here's a [link to my video result](./project_video_out.mp4)
 
 
-####2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
+#### 2. Implemented filter for false positives and method for combining overlapping bounding boxes.
 
 I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a 
 heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` 
@@ -120,7 +114,7 @@ the result of `scipy.ndimage.measurements.label()` and the bounding boxes then o
 
 ###Discussion
 
-####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+#### Problems / issues
 
 The detection accuracy was not good enough with YCrCb 3-channel HOG features only, so I added binned color and histograms of color
 to improve.

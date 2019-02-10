@@ -1,9 +1,9 @@
-# CarND-Path-Planning-Project
+# Path Planning
 
 
 ![MPC driving](pic/pic1.png)
 
-### Goals
+## Goals
 In this project your goal is to safely navigate around a virtual highway with 
 other traffic that is driving +-10 MPH of the 50 MPH speed limit. It will 
 be provided that the car's localization and sensor fusion data, there is also a 
@@ -58,4 +58,6 @@ when possible, note that other cars will try to change lanes too. The car should
       
     
 
+## Final result (drives around track video)
+Here's a [link to my video result](.pic/pathplan.mp4)
   

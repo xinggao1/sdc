@@ -1,4 +1,4 @@
-## Advanced Lane Finding Project
+## Advanced Lane Finding
 
 The goals / steps of this project are the following:
 
@@ -27,7 +27,7 @@ The goals / steps of this project are the following:
 
 ### Camera Calibration
 
-#### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
+#### 1. Computed the camera matrix and distortion coefficients
 
 The code for this step is contained in the first code cell of the IPython notebook located in 
 `advancedLaneFind.ipynb`.  
@@ -47,7 +47,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 ### Pipeline (single images)
 
-#### 1. Provide an example of a distortion-corrected image.
+#### 1. Example of a distortion-corrected image.
 
 
 To demonstrate this step, I will describe how I crop only bottom half, and apply the distortion correction to one of the 
@@ -57,7 +57,7 @@ test images like this one:
 
 ![alt text][image2]
 
-#### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
+#### 2. Transforms to thresholded binary image
 
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at 4th cell of
 `advancedLaneFind.ipynb`.). The S channel of HLS and R channel of RGB image are taken to apply Sobel filter. And then the
@@ -66,7 +66,7 @@ Here's an example of my output for this step.
 
 ![alt text][image3]
 
-#### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
+#### 3. Perspective transform
 
 The code for my perspective transform includes a function called `persTranIMG()`, which appears in  5th cell of
 `advancedLaneFind.ipynb`  The `persTranIMG()` function takes as inputs an image (`img`), use source (`srcP`) and destination (`dstP`) points. 
@@ -100,7 +100,7 @@ image and its warped counterpart to verify that the lines appear parallel in the
 
 ![alt text][image5]
 
-#### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
+#### 4. Identified lane-line pixels and fit polynomial
 
 Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
 
@@ -112,7 +112,7 @@ After the first poly line, the following search is based on the area near last l
 The code for this process is in the function `fitPolyline_follow()` in 8th cell of `advancedLaneFind.ipynb`
 ![alt text][image7]
 
-#### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
+#### 5. Calculated radius of lane curvature and position of vehicle
 
 I did this in function `calCurv()` in 9th cell of `advancedLaneFind.ipynb`
 
@@ -120,7 +120,7 @@ I did this in function `calCurv()` in 9th cell of `advancedLaneFind.ipynb`
 left_curverad = ((1 + (2*left_fit_cr[0]*y_eval*ym_per_pix + left_fit_cr[1])**2)**1.5) / np.absolute(2*left_fit_cr[0])
 ```
 
-#### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
+#### 6. plotted back down onto the road.
 
 I implemented this in function `drawLane()` in 10th cell of `advancedLaneFind.ipynb`.
 Here is an example of my result on a test image, the lane calculated based on the warped lane mark is warped back to the 
